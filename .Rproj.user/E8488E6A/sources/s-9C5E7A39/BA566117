@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1589203934539.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "BA566117",
+    "lastKnownWriteTime" : 1589203954,
+    "last_content_update" : 1589203954893,
+    "path" : "~/PhD/Argo_code_development/Reprojmap/R/map_plot_proj.R",
+    "project_path" : "R/map_plot_proj.R",
+    "properties" : {
+        "cursorPosition" : "64,41",
+        "scrollLine" : "53"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
