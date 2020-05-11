@@ -57,7 +57,8 @@ map_plot_proj = function(extent,proj_str,resolution, scale_res = 100, circle = F
 
   ### Set up coastlines for plots **** change to call from a package
   # import coastlines
-  coastlines = Reprojmap::coastlines
+  data.path = system.file("data", package = "Reprojmap")
+  coastlines = load(file.path(data.path,"Coastlines_USGS_gen01.rda"))
   # reproject coastlines
   coastlines = spTransform(coastlines,proj_str)
   # convert to spatial polygons
