@@ -24,10 +24,10 @@ map_plot_proj = function(extent,proj_str,resolution, scale_res = 100, circle = F
     trim_points = data.frame("x" = seq(-180,179.5,0.25), "y" = rep(clip_lat,length(seq(-180,179.5,0.25))))
     coordinates(trim_points) <- ~x+y
     projection(trim_points) <- "+proj=longlat +datum=WGS84"
-    trim_points = spTransform(trim_points,SOmap()$projection)
+    trim_points = spTransform(trim_points,proj_str)
     trim_points = as.data.frame(trim_points)[-1,]
     trim_poly = Polygons(list(Polygon(trim_points)), "ID")
-    border_ster_poly = SpatialPolygons(list(trim_poly), proj4string = CRS(SOmap()$projection))
+    border_ster_poly = SpatialPolygons(list(trim_poly), proj4string = CRS(proj_str))
   }else{
   # set up plot border
   plot_poly = data.frame("x" = c(extent@xmin,extent@xmin,extent@xmax,extent@xmax),
