@@ -18,4 +18,5 @@ Imports:
       sp,
       devtools,
       polyclip,
-      rgdal
+      rgdal,
+      rgeos
