@@ -25,6 +25,7 @@ map_plot_proj = function(extent,proj_str,resolution, scale_res = 100, circle = F
     coordinates(trim_points) <- ~x+y
     projection(trim_points) <- "+proj=longlat +datum=WGS84"
     trim_points = spTransform(trim_points,proj_str)
+    extent_ster = extent(trim_points)
     trim_points = as.data.frame(trim_points)[-1,]
     trim_poly = Polygons(list(Polygon(trim_points)), "ID")
     border_ster_poly = SpatialPolygons(list(trim_poly), proj4string = CRS(proj_str))
@@ -57,7 +58,7 @@ map_plot_proj = function(extent,proj_str,resolution, scale_res = 100, circle = F
 
   ### Set up coastlines for plots **** change to call from a package
   # import coastlines
-  coastlines =Reprojmap::coastlines
+  coastlines = Reprojmap::coastlines
   # reproject coastlines
   coastlines = spTransform(coastlines,proj_str)
   # convert to spatial polygons
