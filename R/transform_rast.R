@@ -13,19 +13,15 @@
 #' @export
 
 
-transform_rast = function(rast,proj,plot_extent){
-
-# convert raster to spatial points data frame for reprojection
-rastdf = as(rast,"SpatialPointsDataFrame")
+transform_rast = function(rast,proj,plot_extent, rf = 2){
 
 # equal area grid for plot extent
 extent_ster = plot_extent
-emptyrast = raster(extent_ster,nrow = nrow(rast)*2, ncol = nrow(rast)*2)
+emptyrast = raster(extent_ster,nrow = nrow(rast)*rf, ncol = nrow(rast)*rf)
 projection(emptyrast) <- proj
 
 # transform to new projection and interpolate to grid
-rastdf_ster = spTransform(rastdf,proj)
-rastdf_ster = raster::resample(rast,emptyrast,method = "bilinear")
+rastdf_ster = raster::projectRaster(rast,emptyrast,method = "bilinear", crs = proj)
 data_ster_rast = as(rastdf_ster,"SpatialPointsDataFrame")
 data_ster_rast = data.frame(data_ster_rast)
 
