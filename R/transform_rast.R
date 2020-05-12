@@ -7,7 +7,7 @@
 #'
 #' @return A new raster that has been reprojected
 #' @param rast The raster to be transformed
-#' @param plot_extent plot extent. Maybe the extent of a raster to be plotted?
+#' @param plot_extent plot extent in plot projection. Maybe the extent of a raster to be plotted?
 #' @param proj the projection the plot will be in
 #'
 #' @export

@@ -11,7 +11,7 @@ transform_rast(rast, proj, plot_extent)
 
 \item{proj}{the projection the plot will be in}
 
-\item{plot_extent}{plot extent. Maybe the extent of a raster to be plotted?}
+\item{plot_extent}{plot extent in plot projection. Maybe the extent of a raster to be plotted?}
 }
 \value{
 A new raster that has been reprojected

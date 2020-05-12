@@ -7,7 +7,7 @@
 map_plot_proj(extent, proj_str, resolution, scale_res = 100, circle = F)
 }
 \arguments{
-\item{extent}{plot extent. Maybe the extent of a raster to be plotted?}
+\item{extent}{plot extent in lat, lon coordinates. Maybe the extent of a raster to be plotted?}
 
 \item{proj_str}{the projection the plot will be in}
 

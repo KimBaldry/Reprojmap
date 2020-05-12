@@ -8,7 +8,7 @@
 #' @note In development
 #'
 #' @return Two data frames that coresponds to the plot boarder and coastlines
-#' @param extent plot extent. Maybe the extent of a raster to be plotted?
+#' @param extent plot extent in lat, lon coordinates. Maybe the extent of a raster to be plotted?
 #' @param proj_str the projection the plot will be in
 #' @param resolution the resolution of the data to be plotted
 #' @param scale_res a scalar to help woth increasing the boarder resolution
