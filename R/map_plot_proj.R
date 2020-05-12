@@ -71,7 +71,7 @@ map_plot_proj = function(extent,proj_str,resolution, scale_res = 100, circle = F
       SpatialPolygons(list(Polygons(list(Polygon(coastlines[[x]])),"ID")), proj4string = CRS(proj_str))}else{NA}})
   coast_polys1 =coast_polys1[which(is.na(coast_polys1) ==F)]
   # compute intersecting polygon for each indevidual polygon - by doing by individual polygon we prevent the polygons breaking
-  coast_polys2 = lapply(c(1:length(coast_polys1)) ,function(x){rgeos::gIntersection(coast_polys1[[x]],border_ster_poly)})
+  coast_polys2 = lapply(c(1:length(coast_polys1)) ,function(x){rgeos::gIntersection(coast_polys1[[x]],border_ster_poly, checkValidity = 2L)})
   coast_polys3 = lapply(c(1:length(coast_polys2)), function(x){if(is.null(coast_polys2[[x]]) == F){coast_polys2[[x]]}else{NA}})
   coast_polys3 =coast_polys3[which(is.na(coast_polys3) ==F)]
   # set up polygon IDs
